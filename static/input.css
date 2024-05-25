@@ -1,0 +1,77 @@
+body{
+	margin: 0px;
+	font-family: 'Inter', normal;
+	background: #161616;
+	background: -webkit-linear-gradient(52deg, #161616 0%, #474747 100%);
+	background: linear-gradient(52deg, #161616 0%, #202020 100%);
+}
+
+.main_title{
+	font-family: 'Libre Barcode 39 Text', cursive;
+	color: #333333;
+	font-size: 80px;
+	margin: 2%;
+	background: transparent;
+	text-align: center;
+
+}
+.main_column{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+}
+.bottom_item_column{
+	flex-direction: column;
+	background: transparent;
+	border-radius: 15px;
+	border: 1px solid #474747;
+	animation: border-color-change 10s infinite;
+	margin: 2%;
+	margin-top: 0%;
+	width: 33%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.maincardtitle{
+	font-family: 'Libre Barcode 39 Text', cursive;
+	font-size: 100px;
+	margin: 5%;
+	margin-top: 10%;
+	margin-bottom: 5%;
+	text-align: center;
+}
+input{
+	background: transparent;
+	border-radius: 10px;
+	text-align: center;
+	height: 30px;
+	box-shadow: none;
+	border: 1px solid #474747;
+	margin: 5px;
+	color: white;
+}
+.bottom_row_item{
+	width: 100%;
+	text-align: center;
+}
+.submit_button{
+	border-radius: 15px;
+	border: 1px solid green;
+	color: green;
+	margin: auto;
+	margin-top: 10px;
+	width: 33%;
+	height: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}

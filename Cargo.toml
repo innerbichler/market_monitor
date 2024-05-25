@@ -12,3 +12,7 @@ rusqlite = "0.31.0"
 [dependencies.rocket]
 version = "0.5.1"
 features = ["json"]
+
+[dependencies.libsqlite3-sys]
+version = "0.28.0"
+features = ["bundled"]

@@ -1,6 +1,10 @@
 /* CSS styles */
 body{
 	margin: 0px;
+	font-family: 'Inter', normal;
+	background: #161616;
+	background: -webkit-linear-gradient(52deg, #161616 0%, #474747 100%);
+	background: linear-gradient(52deg, #161616 0%, #202020 100%);
 }
 .toprow{
   display: flex;
@@ -9,7 +13,6 @@ body{
   justify-content: center;
 }
 .flexy{
-  background: #161616;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -58,12 +61,6 @@ body{
 		border-color: #474747;
 	}
 }
-.bottomrow{
-  display: flex;
-  flex: 7;
-  flex-direction: row;
-  background: transparent;
-}
 .searchbarrow{
   display: flex;
   flex-direction: row;
@@ -85,4 +82,58 @@ body{
   width: 15%;
   margin-left: 2%;
 }
-
+.bottomrow{
+  display: flex;
+  flex: 7;
+  flex-direction: row;
+  background: transparent;
+}
+.bottom_item_column{
+  display: flex;
+  flex: 10;
+  flex-direction: column;
+}
+.bottom_index_column{
+	display: flex;
+	flex: 10;
+	flex-direction: column;
+	background: transparent;
+	border-radius: 15px;
+	border: 1px solid #474747;
+	animation: border-color-change 10s infinite;
+	margin: 2%;
+}
+.bottom_row_item{
+	display: flex;
+	flex-direction: row;
+	border-radius: 15px;
+	border: 1px solid #474747;
+	text-align: center;
+	color: #999999;
+	font-size: 18px;
+	animation: border-color-change 10s infinite;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 2%;
+}
+.bottom_row_logo{
+	  height: 45px;
+	  border: 0px solid black;
+	  overflow: hidden;
+	  margin: 10px;
+	  flex: 1.5;
+	  object-fit: scale-down;
+}
+.bottom_row_product_name{
+	flex: 3;
+	align-content: center;
+}
+.bottom_row_product_type{
+	flex: 3;
+	align-content: center;
+}
+.bottom_row_price_per_liter{
+	flex: 3;
+	align-content: center;
+	font-size: 32px;
+}
