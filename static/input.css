@@ -1,14 +1,14 @@
 body{
 	margin: 0px;
 	font-family: 'Inter', normal;
-	background: #161616;
-	background: -webkit-linear-gradient(52deg, #161616 0%, #474747 100%);
-	background: linear-gradient(52deg, #161616 0%, #202020 100%);
+	background: #060613;
+	--background: -webkit-linear-gradient(52deg, #0e0e0e 0%, #202020 100%);
+	--background: linear-gradient(52deg, #0e0e0e 0%, #202020 100%);
 }
 
 .main_title{
 	font-family: 'Libre Barcode 39 Text', cursive;
-	color: #333333;
+	color: #201D31;
 	font-size: 80px;
 	margin: 2%;
 	background: transparent;
@@ -27,9 +27,9 @@ body{
 }
 .bottom_item_column{
 	flex-direction: column;
-	background: transparent;
+	background: #201D31;
 	border-radius: 15px;
-	border: 1px solid #474747;
+	border: 0px solid #120279;
 	animation: border-color-change 10s infinite;
 	margin: 2%;
 	margin-top: 0%;
@@ -49,14 +49,15 @@ body{
 	text-align: center;
 }
 input{
-	background: transparent;
-	border-radius: 10px;
+	background: #161620;
+	border-radius: 50px;
 	text-align: center;
-	height: 30px;
+	height: 35px;
 	box-shadow: none;
-	border: 1px solid #474747;
+	border: 0px solid #120279;
 	margin: 5px;
 	color: white;
+	width: 55%;
 }
 .bottom_row_item{
 	width: 100%;
@@ -64,8 +65,8 @@ input{
 }
 .submit_button{
 	border-radius: 15px;
-	border: 1px solid green;
-	color: green;
+	border: 0px solid green;
+	color: #868686;
 	margin: auto;
 	margin-top: 10px;
 	width: 33%;
@@ -74,4 +75,5 @@ input{
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	background: #0E3C2B;
 }

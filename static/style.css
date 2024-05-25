@@ -2,9 +2,9 @@
 body{
 	margin: 0px;
 	font-family: 'Inter', normal;
-	background: #161616;
-	background: -webkit-linear-gradient(52deg, #161616 0%, #474747 100%);
-	background: linear-gradient(52deg, #161616 0%, #202020 100%);
+	background: #060613;
+	--background: -webkit-linear-gradient(52deg, #0e0e0e 0%, #202020 100%);
+	--background: linear-gradient(52deg, #0e0e0e 0%, #202020 100%);
 }
 .toprow{
   display: flex;
@@ -36,7 +36,8 @@ body{
 }
 .centertop{
   display: flex;
-  border: 1px solid #474747;
+  border: 0px solid #474747;
+  background: #201D31;
   border-radius: 20px;
   text-align: center;
   align-items: center;
@@ -67,17 +68,19 @@ body{
 }
 .searchbar{
   border-radius: 20px;
-  border: 1px solid #474747;
+  border: 0px solid #474747;
   text-align: center;
   margin-top: 10px;
   padding: 10px;
   width: 85%;
+  background: #201D31;
 }
 .searchfilter{
   margin-top: 10px;
+  background: #201D31;
   padding: 10px;
   border-radius: 20px;
-  border: 1px solid #474747;
+  border: 0px solid #474747;
   text-align: center;
   width: 15%;
   margin-left: 2%;
@@ -99,7 +102,7 @@ body{
 	flex-direction: column;
 	background: transparent;
 	border-radius: 15px;
-	border: 1px solid #474747;
+	border: 3px solid #201D31;
 	animation: border-color-change 10s infinite;
 	margin: 2%;
 }
@@ -107,7 +110,7 @@ body{
 	display: flex;
 	flex-direction: row;
 	border-radius: 15px;
-	border: 1px solid #474747;
+	border: 0px solid #474747;
 	text-align: center;
 	color: #999999;
 	font-size: 18px;
@@ -115,6 +118,7 @@ body{
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-top: 2%;
+	background: #201D31;
 }
 .bottom_row_logo{
 	  height: 45px;
