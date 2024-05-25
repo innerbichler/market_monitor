@@ -10,7 +10,6 @@ pub fn setup_db_main(){
 
 fn setup_db() -> Result<()> {
     let conn = Connection::open("beverages.db")?;
-    // company table
 
     conn.execute(
         "create table if not exists beverage (
@@ -19,7 +18,8 @@ fn setup_db() -> Result<()> {
              company_name text not null,
              product_type text not null,
              packaging_type text not null,
-             price_per_liter float not null,
+             price_per_liter real not null,
+             timestamp text not null
          )",
          (),
     )?;

@@ -38,12 +38,13 @@ function change_center_product(id){
 
 		let searchbar = document.createElement("div");
 		searchbar.className = "searchbar";
-		let textnode = document.createTextNode("search ...");
+		let textnode = document.createTextNode("enter ...");
 		searchbar.appendChild(textnode);
 
 		let searchfilter = document.createElement("div");
 		searchfilter.className = "searchfilter";
-		let textnode2 = document.createTextNode("filter");
+		searchfilter.onclick = get_search;
+		let textnode2 = document.createTextNode("search");
 		searchfilter.appendChild(textnode2);
 
 		searchbarrow.appendChild(searchbar);
@@ -87,12 +88,13 @@ function get_products(amount){
 
 			let searchbar = document.createElement("div");
 			searchbar.className = "searchbar";
-			let textnode = document.createTextNode("search ...");
+			let textnode = document.createTextNode("enter ...");
 			searchbar.appendChild(textnode);
 
 			let searchfilter = document.createElement("div");
 			searchfilter.className = "searchfilter";
-			let textnode2 = document.createTextNode("filter");
+			searchfilter.onclick = get_search;
+			let textnode2 = document.createTextNode("search");
 			searchfilter.appendChild(textnode2);
 
 			searchbarrow.appendChild(searchbar);
@@ -106,5 +108,18 @@ function get_products(amount){
 	})
 }
 
+function get_search(){
+	// fetches the beverage with the search
+	fetch("/get_search")
+	.then((res) => res.json())
+	.then((json) => {
+		Object.keys(json).forEach((key) => {
+			data = json[key];
+			console.log(data.product_name);
+		});
+	});
+}
+
+// standard homepage only shows three products at a time
 get_products(3);
 
