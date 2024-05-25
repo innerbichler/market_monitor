@@ -1,0 +1,88 @@
+/* CSS styles */
+body{
+	margin: 0px;
+}
+.toprow{
+  display: flex;
+  flex: 5;
+  flex-direction: row;
+  justify-content: center;
+}
+.flexy{
+  background: #161616;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  color: #474747;
+}
+.toprow > *{
+
+  width: 50%;
+  margin: 2%;
+}
+.maincardtitle{
+  font-family: 'Libre Barcode 39 Text', cursive;
+  font-size: 128px;
+  width: 100%;
+}
+.centercard{
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+}
+.centertop{
+  display: flex;
+  border: 1px solid #474747;
+  border-radius: 20px;
+  text-align: center;
+  align-items: center;
+  --margin-bottom: 15px;
+  flex: 10;
+  animation: border-color-change 10s infinite;
+}
+.searchbar:hover,
+.searchfilter:hover,
+.centertop:hover{
+  border: 1px solid white;
+  animation: none;
+}
+@keyframes border-color-change {
+	0% {
+		border-color: #474747;
+	}
+	50% {
+		border-color: #47474749;
+	}
+	100% {
+		border-color: #474747;
+	}
+}
+.bottomrow{
+  display: flex;
+  flex: 7;
+  flex-direction: row;
+  background: transparent;
+}
+.searchbarrow{
+  display: flex;
+  flex-direction: row;
+}
+.searchbar{
+  border-radius: 20px;
+  border: 1px solid #474747;
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+  width: 85%;
+}
+.searchfilter{
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #474747;
+  text-align: center;
+  width: 15%;
+  margin-left: 2%;
+}
+
