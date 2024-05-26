@@ -11,6 +11,8 @@ body{
   flex: 5;
   flex-direction: row;
   justify-content: center;
+  background-image: url('shapes.gif');
+  background-size: cover;
 }
 .flexy{
   display: flex;
