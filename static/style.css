@@ -45,7 +45,7 @@ body{
   align-items: center;
   --margin-bottom: 15px;
   flex: 10;
-  animation: border-color-change 10s infinite;
+  animation: border-color-change 5s infinite;
 }
 .searchbar:hover,
 .searchfilter:hover,
@@ -55,13 +55,16 @@ body{
 }
 @keyframes border-color-change {
 	0% {
-		border-color: #474747;
+		border-color: #201D31;
 	}
-	50% {
-		border-color: #47474749;
+	25% {
+		border-color: #ff00ff;
+	}
+	75% {
+		border-color: #5900ff;
 	}
 	100% {
-		border-color: #474747;
+		border-color: #201D31;
 	}
 }
 .searchbarrow{
@@ -104,7 +107,7 @@ body{
 	flex-direction: column;
 	background: transparent;
 	border-radius: 15px;
-	border: 3px solid #201D31;
+	border: 3px solid #201D31; 
 	animation: border-color-change 10s infinite;
 	margin: 2%;
 }
