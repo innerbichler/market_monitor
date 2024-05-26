@@ -14,4 +14,5 @@ function input_beverage(){
 	console.log(package_type);
 	console.log(price_per_liter);
 
+	fetch("/api/v1/beverage/"+product_name+"/"+company_name+"/"+product_type+"/"+package_type+"/"+ price_per_liter, {});
 }

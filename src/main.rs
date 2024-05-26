@@ -12,17 +12,21 @@ struct ProductType{
     color: String,
 }
 
-#[get("/insert_beverage")]
-fn insert_beverage(){
-    let _test = match db_control::insert_beverage(
+#[get("/beverage/<product_name>/<company_name>/<product_type>/<packaging_type>/<price_per_liter>")]
+fn insert_beverage(product_name: &str,
+    company_name: &str,
+    product_type: &str,
+    packaging_type: &str,
+    price_per_liter: f32){
+
+    match db_control::insert_beverage(
         db_control::Beverage{
-        product_name: "Schwechater".to_string(),
-        company_name: "Billa".to_string(),
-        product_type: "Bier".to_string(),
-        packaging_type: "Dose".to_string(),
-        price_per_liter: 1.66,
-        timestamp: chrono::Local::now().to_utc().to_string()
-        }
+        product_name: product_name.to_string(),
+        company_name: company_name.to_string(),
+        product_type: product_type.to_string(),
+        packaging_type: packaging_type.to_string(),
+        price_per_liter: price_per_liter,
+        timestamp: chrono::Local::now().to_utc().to_string()}
         ){
         Ok(_) => println!("Successfully Inserted Beverage"),
         Err(e) => println!("Error with inserting {}", e),
@@ -60,7 +64,7 @@ fn get_products() -> Json<Vec<ProductType>> {
 fn rocket() -> _ {
     setup_db::setup_db_main();
     rocket::build()
-        .mount("/", routes![insert_beverage])
+        .mount("/api/v1", routes![insert_beverage])
         .mount("/", routes![get_search])
         .mount("/", routes![get_products])
         .mount("/", FileServer::from("static"))

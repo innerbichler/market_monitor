@@ -36,10 +36,11 @@ function change_center_product(id){
 		let searchbarrow = document.createElement("div");
 		searchbarrow.className = "searchbarrow";
 
-		let searchbar = document.createElement("div");
+		let searchbar = document.createElement("input");
 		searchbar.className = "searchbar";
-		let textnode = document.createTextNode("enter ...");
-		searchbar.appendChild(textnode);
+		searchbar.placeholder = "enter here ...";
+		searchbar.id = "search";
+		searchbar.type = "text";
 
 		let searchfilter = document.createElement("div");
 		searchfilter.className = "searchfilter";
@@ -86,10 +87,11 @@ function get_products(amount){
 			let searchbarrow = document.createElement("div");
 			searchbarrow.className = "searchbarrow";
 
-			let searchbar = document.createElement("div");
+			let searchbar = document.createElement("input");
 			searchbar.className = "searchbar";
-			let textnode = document.createTextNode("enter ...");
-			searchbar.appendChild(textnode);
+			searchbar.placeholder = "enter here ...";
+			searchbar.id = "search";
+			searchbar.type = "text";
 
 			let searchfilter = document.createElement("div");
 			searchfilter.className = "searchfilter";
@@ -109,17 +111,94 @@ function get_products(amount){
 }
 
 function get_search(){
+	let col = document.getElementsByClassName("bottom_item_column")[0];
+	col.innerHTML = "";
+
 	// fetches the beverage with the search
 	fetch("/get_search")
 	.then((res) => res.json())
 	.then((json) => {
+		drawChart(json);
+		
 		Object.keys(json).forEach((key) => {
 			data = json[key];
-			console.log(data.product_name);
+			console.log(data.product_name + " : " + data.company_name + " : " +data.timestamp);
+			let row_item = document.createElement("div");
+			row_item.className = "bottom_row_item";
+
+			let logo = document.createElement("img");
+			logo.className = "bottom_row_logo";
+			logo.src = data.company_name.toLowerCase()+".png";
+
+			let product_name = document.createElement("div");
+			product_name.className = "bottom_row_product_name";
+			let textnode = document.createTextNode(data.product_name);
+			product_name.appendChild(textnode);
+
+			let packaging_type = document.createElement("div");
+			packaging_type.className = "bottom_row_packaging_type";
+			let textnode2 = document.createTextNode(data.packaging_type);
+			packaging_type.appendChild(textnode2);
+
+			let price_per_liter = document.createElement("div");
+			price_per_liter.className = "bottom_row_price_per_liter";
+			let textnode3 = document.createTextNode(data.price_per_liter + "€");
+			price_per_liter.appendChild(textnode3);
+
+			row_item.appendChild(logo);
+			row_item.appendChild(product_name);
+			row_item.appendChild(packaging_type);
+			row_item.appendChild(price_per_liter);
+			col.appendChild(row_item);
 		});
 	});
 }
 
+google.charts.load('current', {'packages':['bar']});
+function drawChart(product_data) {
+
+	let chart_data = [["company", "price"]];
+	Object.keys(product_data).forEach((key) => {
+		let row = product_data[key];
+		chart_data.push([row.company_name, row.price_per_liter]);
+	});
+	console.log(chart_data);
+        var data = google.visualization.arrayToDataTable(chart_data);
+
+        var options = {
+	chart: {
+		backgroundColor: "transparent",
+	},
+	vAxis : { 
+		gridlines: { count: 0 },
+		textStyle : {
+			fontSize: 20 // or the number you want
+		}
+	},
+	hAxis : { 
+		gridlines: { count: 0 },
+		title: "",
+		textStyle : {
+			fontSize: 20 // or the number you want
+		}
+	},
+	chartArea: {
+		backgroundColor: {
+			fill: "transparent"
+		},
+	},
+	backgroundColor: {
+		fill: "transparent"
+	},
+	legend: {position: "none"},
+	colors: ["#201d31"],
+	bars: 'vertical' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById("myChart"));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+
 // standard homepage only shows three products at a time
 get_products(3);
-

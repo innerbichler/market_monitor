@@ -11,12 +11,13 @@ body{
   flex: 5;
   flex-direction: row;
   justify-content: center;
-  background-image: url('shapes2.gif');
-  background-size: cover;
+  background: transparent;
 }
 .flexy{
   display: flex;
   flex-direction: column;
+  background-image: url('shapes.gif');
+  background-size: cover;
   height: 100vh;
   width: 100%;
   color: #474747;
@@ -39,7 +40,8 @@ body{
 .centertop{
   display: flex;
   border: 0px solid #474747;
-  background: #201D31;
+	background: #060613;
+  opacity: 85%;
   border-radius: 20px;
   text-align: center;
   align-items: center;
@@ -50,8 +52,8 @@ body{
 .searchbar:hover,
 .searchfilter:hover,
 .centertop:hover{
-  border: 1px solid white;
   animation: none;
+  opacity: 95%;
 }
 @keyframes border-color-change {
 	0% {
@@ -70,36 +72,72 @@ body{
 .searchbarrow{
   display: flex;
   flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+input,
+input::placeholder{
+	font-family: 'Inter', normal;
+	font-size: 15px;
+	color: #676767;
 }
 .searchbar{
-  border-radius: 20px;
-  border: 0px solid #474747;
-  text-align: center;
-  margin-top: 10px;
-  padding: 10px;
-  width: 85%;
-  background: #201D31;
+	border-radius: 20px;
+	border: 0px solid #676767;
+	text-align: center;
+	margin-top: 10px;
+	padding: 10px;
+	background: #060613;
+	font-family: 'Inter', normal;
+	opacity: 85%;
+	animation: smaller 1s;
+	animation-iteration-count: 1;
+	flex: 5;
+	width: 100%;
+}
+.searchfilter:hover,
+.searchbar:hover{
+	animation: widen 1s;
+	animation-iteration-count: 1;
+	flex: 20;
+}
+@keyframes widen {
+  0%   {flex: 5}
+  100% {flex: 20}
+}
+
+@keyframes smaller {
+  0%   {flex: 20}
+  100% {flex: 5}
 }
 .searchfilter{
+color: #676767;
+	animation: smaller 1s;
+	animation-iteration-count: 1;
+	flex: 5;
   margin-top: 10px;
-  background: #201D31;
+  opacity: 85%;
+  background: #060613;
   padding: 10px;
   border-radius: 20px;
   border: 0px solid #474747;
   text-align: center;
-  width: 15%;
+  flex: 5;
   margin-left: 2%;
 }
 .bottomrow{
   display: flex;
   flex: 7;
   flex-direction: row;
-  background: transparent;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+background: #060613;
 }
 .bottom_item_column{
   display: flex;
   flex: 10;
   flex-direction: column;
+  padding-top: 2%;
 }
 .bottom_index_column{
 	display: flex;
@@ -110,6 +148,7 @@ body{
 	border: 3px solid #201D31; 
 	animation: border-color-change 10s infinite;
 	margin: 2%;
+	overflow: hidden;
 }
 .bottom_row_item{
 	display: flex;
@@ -137,7 +176,7 @@ body{
 	flex: 3;
 	align-content: center;
 }
-.bottom_row_product_type{
+.bottom_row_packaging_type{
 	flex: 3;
 	align-content: center;
 }
@@ -145,4 +184,8 @@ body{
 	flex: 3;
 	align-content: center;
 	font-size: 32px;
+}
+.bottom_index_chart{
+	height: 100%;
+	padding: 5%;
 }
