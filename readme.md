@@ -23,3 +23,7 @@ For manual db-Entry use the /input interface or use the
 - improve endpoints and use normal names
 - add more product support
 - seperate API into own project 
+
+## Addendum
+
+gifs from www.thomaslricci.com
