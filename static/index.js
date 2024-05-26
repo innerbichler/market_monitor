@@ -111,7 +111,7 @@ function get_products(amount){
 }
 
 function get_search(){
-	let col = document.getElementsByClassName("bottom_item_column")[0];
+	let col = document.getElementById("product_item_list");
 	col.innerHTML = "";
 
 	// fetches the beverage with the search
