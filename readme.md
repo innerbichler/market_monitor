@@ -16,13 +16,24 @@ For manual db-Entry use the /input interface or use the
 
 ### Current API-Endpoints
 
-- /input_beverage
+- /api/v1/beverage
 - /get_search
 
 ## 🔨 General Todo 🔧
 - improve endpoints and use normal names
 - add more product support
 - seperate API into own project 
+
+### Future Enpoints
+- /api/v1/search
+    Search for Beverages that match. Empty means all.
+
+- /api/v1/remove
+    Remove Beverage single Beverage that matches Description
+
+- /api/v1/count
+    Count Beverages that match. Empty means all.
+
 
 ## Addendum
 

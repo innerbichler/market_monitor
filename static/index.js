@@ -122,7 +122,7 @@ function get_search(){
 		
 		Object.keys(json).forEach((key) => {
 			data = json[key];
-			console.log(data.product_name + " : " + data.company_name + " : " +data.timestamp);
+			//console.log(data.product_name + " : " + data.company_name + " : " +data.timestamp);
 			let row_item = document.createElement("div");
 			row_item.className = "bottom_row_item";
 
@@ -158,11 +158,22 @@ google.charts.load('current', {'packages':['bar']});
 function drawChart(product_data) {
 
 	let chart_data = [["company", "price"]];
+	let chart_data_aggregated = {};
+	let item_count = {}
 	Object.keys(product_data).forEach((key) => {
 		let row = product_data[key];
-		chart_data.push([row.company_name, row.price_per_liter]);
+		if (row.company_name in chart_data_aggregated){
+			chart_data_aggregated[row.company_name] += row.price_per_liter;
+			item_count[row.company_name] += 1;
+		} else {
+			chart_data_aggregated[row.company_name] = row.price_per_liter;
+			item_count[row.company_name] = 1;
+		}
 	});
-	console.log(chart_data);
+	for (let key in chart_data_aggregated){
+		chart_data_aggregated[key] /= item_count[key];
+		chart_data.push([key, chart_data_aggregated[key]]);
+	}
         var data = google.visualization.arrayToDataTable(chart_data);
 
         var options = {
